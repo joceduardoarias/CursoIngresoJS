@@ -9,11 +9,14 @@ function sumar()
     
     numero_1 = document.getElementById("numeroUno").value;
     numero_2 = document.getElementById("numeroDos").value;
+   
     numero_1 = parseInt(numero_1);
     numero_2 = parseInt(numero_2);
 
     suma = numero_1 + numero_2;
     
     alert("La suma es: " + suma);
+
+    // asi como esta escrito este codigo es una forma ordenada y limpia.
 }
 
