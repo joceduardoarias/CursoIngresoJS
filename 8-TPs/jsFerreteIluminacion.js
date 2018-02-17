@@ -9,44 +9,149 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio () 
-{    
-     var cantidad;
-     var precio;
-     var marca;
-     var importe;
-     var porcentaje;
-     var descuento;
-     var resultado;
+{
+ 	var precio;
+ 	var cantidad;
+ 	var importe;
+ 	var descuento;
+ 	var resultado;
+ 	var marca;
+ 	var aumento;
 
-     cantidad = document.getElementById("Cantidad").value;
-     marca = document.getElementById("Marca").value;
+ 	cantidad = document.getElementById("Cantidad").value;
+ 	marca = document.getElementById("Marca").value;
 
-     cantidad = parseInt(cantidad);
+ 	cantidad = parseInt(cantidad);
+	
+	precio = 35; 	
+ 	importe = precio * cantidad;
 
-     if(cantidad > 5){
+ 	if (cantidad > 5) {
 
-        precio = cantidad * 35;
-        descuento = precio * 0.50;
-        resultado = precio - descuento;
+ 		//importe = precio * cantidad;
+ 		descuento = importe * 0.50;
+ 		//resultado = importe - descuento;
 
-        document.getElementById("precioDescuento").value = resultado;
-     }//if (cantidad > 5)
-        else{
-            if(cantidad == 5){
-                if(marca == "ArgentinaLuz"){
-                   
-                    precio = cantidad * 35;
-                    descuento = precio * 0.40;
-                    resultado = precio - descuento;
-            
-                    document.getElementById("precioDescuento").value = resultado;
-                } // (marca == "ArgentinaLuz")
-                else{
-                    
-                }
-            } // if(cantidad == 5)
-        } // else
+ 		//document.getElementById("precioDescuento").value = resultado; 
+
+ 	}//if( cantidad > 5)
+ 		else { if (cantidad == 5) {
+
+ 				if (marca == "ArgentinaLuz") {
+
+ 					//importe = precio * cantidad;
+ 					descuento = importe * 0.40;
+ 					//resultado = importe - descuento;
+
+ 					//document.getElementById("precioDescuento").value = resultado; 
+
+ 				} // if (marca == "ArgentinaLuz" )
+ 					else {
+
+ 						//importe = precio * cantidad;
+ 						descuento = importe * 0.30;
+ 						//resultado = importe - descuento;
+
+ 						//document.getElementById("precioDescuento").value = resultado; 
+
+ 					}// else
+ 			} // if (cantidad == 5)
+ 				else { if (cantidad == 4) {
+
+ 					if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+
+ 						//importe = precio * cantidad;
+ 						descuento = importe * 0.25;
+ 						//resultado = importe - descuento;
+
+ 						//document.getElementById("precioDescuento").value = resultado; 
+
+ 					} // if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") 
+ 						else {
+ 							
+ 							//importe = precio * cantidad;
+					 		descuento = importe * 0.20;
+					 		//resultado = importe - descuento;
+
+ 							//document.getElementById("precioDescuento").value = resultado;
+ 						
+ 						} // else
+ 				} // if (cantidad == 4)
+ 					else { if (cantidad == 3) {
+
+ 						if (marca == "ArgentinaLuz" ) {
+
+ 							//importe = precio * cantidad;
+					 		descuento = importe * 0.15;
+					 		//resultado = importe - descuento;
+
+ 							//document.getElementById("precioDescuento").value = resultado;
 
 
+ 						}// if (marca == "ArgentinaLuz" )
+ 							else {
+ 								if (marca == "FelipeLamparas" ) {
+ 									
+ 									//importe = precio * cantidad;
+					 				descuento = importe * 0.10;
+					 				//resultado = importe - descuento;
+
+ 									//document.getElementById("precioDescuento").value = resultado;
+
+
+ 								} // if (marca == "FelipeLamparas")
+ 									else {
+
+ 										//importe = precio * cantidad;
+					 					descuento = importe * 0.05;
+					 					//resultado = importe - descuento;
+
+ 										//document.getElementById("precioDescuento").value = resultado;
+
+ 									} // else
+ 							}// else
+
+ 					} // if (cantidad == 3)
+ 						else { if (cantidad < 3) {
+
+ 										//importe = precio * cantidad;
+					 					descuento = importe * 0.00;
+					 					//resultado = importe - descuento;
+
+ 										//document.getElementById("precioDescuento").value = resultado;
+
+ 						} // if (cantidad < 3)
+
+ 						}// else
+ 					} // else
+ 				} // else
+
+ 		}// else 
+ 			 
+ 				//importe = precio * cantidad;
+				//descuento = importe * 0.00;
+				resultado = importe - descuento;
+
+		 		//document.getElementById("precioDescuento").value = resultado;
+
+		 		if (resultado > 120 ) {
+
+		 			importe = resultado * 0.10;
+		 			resultado = resultado + importe;
+
+		 			document.getElementById("precioDescuento").value = resultado;
+
+		 			alert("IIBB Usted pago:" + " " + importe);
+
+		 		} else {
+
+		 			document.getElementById("precioDescuento").value = resultado;
+
+
+		 		}
+
+
+
+ 		
 
 }
