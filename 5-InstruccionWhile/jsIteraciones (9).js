@@ -9,35 +9,36 @@ function Mostrar()
 	
 	var respuesta='si';
 
-	while( respuesta != "no")
-	{	
-		contador++;
-		numero = prompt("ingrese numero");
+	while(respuesta!='no')
+	{
+		contador = contador + 1;
+		numero = prompt("Ingrese numero");
 		numero = parseInt(numero);
 
-		if( contador == 1)
+		if (contador == 1) 
 		{
 			maximo = numero;
 			minimo = numero;
-		}
-		else
+		} // if ( contador == 1)
+		else 
 		{
+			if (numero > maximo) 
+			{
+				maximo = numero;
+			}
 
-		if(numero > maximo)
-		{
-			maximo = numero;					// sacar minimo o maxmo son dos cosas diferetntes por eso utilizamos dos if distintos.
-		}
-		if(numero < minimo)
-		{
-			minimo = numero;
+			if (numero < minimo) 
+			{
+				minimo = numero;
+			}
 		}
 
-		}
-		//contador ++;								puedo ubicar el contador despues de las comparaciones y cambiar el valor del contador == 1 por contador == 0. 
-		respuesta = prompt("para salir ingrese; no");
+		respuesta = prompt( "si desea continuar digite si, de lo contrario marque no");
+
+	
 	}
 
-		document.getElementById("maximo").value = maximo;
-		document.getElementById("minimo").value = minimo;
+	document.getElementById("maximo").value = maximo;
+	document.getElementById("minimo").value = minimo;
 
 }//FIN DE LA FUNCIÓN

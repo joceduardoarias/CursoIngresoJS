@@ -3,59 +3,68 @@ function Mostrar()
 
 	var contador = 0;
 	var numero;
-	var negativos = 0;
 	var contadorNegativos = 0;
-	var positivos= 0;
+	var acumuladorNegativos = 0;
 	var contadorPositivos = 0;
+	var acumuladorPositivos = 0;
 	var contadorCeros = 0;
-	var contadorPares=0;
-	var promedioNegativos;
+	var contadorPares = 0;
 	var promedioPositivos;
+	var promedioNegativos;
 	var diferencia;
 	//declarar contadores y variables 
 	
-	var respuesta="si";
-	
-	while(respuesta!="no")
-	{	
-		contador ++;
-		numero = prompt("Ingrese numero");
-		numero = parseInt(numero);
+	var respuesta = "si";
+
+	while(respuesta !="no")
+	{
+		contador = contador + 1;
 		
-		if( numero%2 == 0 && numero != 0)
+		numero = prompt("Ingrese numero:");
+		numero = parseInt(numero);
+
+		if( numero % 2 == 0)
 		{
-			contadorPares++;
+			contadorPares = contadorPares + 1;
 		}
-		if( numero < 0 )
-		{
-			negativos = negativos + numero;
-			 contadorNegativos ++;
+
+		if(numero < 0)
+		{	
+			contadorNegativos = contadorNegativos + 1;
+			acumuladorNegativos = acumuladorNegativos + numero;
 		}
 		else
 		{
-			if( numero > 0)
+			if (numero > 0) 
 			{
-				positivos = positivos + numero;
-				contadorPositivos++;
+				contadorPositivos = contadorPositivos + 1;
+				acumuladorPositivos = acumuladorPositivos + numero;
 			}
 			else
 			{
-				contadorCeros ++;
+				if(numero == 0)
+				{
+					contadorCeros = contadorCeros + 1;
+				}
 			}
-		}
-	
-		respuesta = prompt(" para continuar ingrese si / no");
-	}
-		promedioNegativos = negativos / contadorNegativos;
-		promedioPositivos = positivos / contadorPositivos;
-		
-		diferencia = positivos - negativos;
+		}	
 
-		document.write("suma negativos :" + "" +negativos);
-		document.write("promedioNegativos:"+""+promedioNegativos);
-		document.write("promedioPositivos:"+""+promedioPositivos);
-		document.write("cantidad de ceros :"+""+ contadorCeros);
-		document.write("contadorPares:"+""+contadorPares);
-		document.write("diferencia :"+""+ diferencia);
+		respuesta = prompt("Desea continuar digite si, de lo contrario digite no.");
+	
+	}
+
+	promedioPositivos = acumuladorPositivos / contadorPositivos;
+	promedioNegativos = acumuladorNegativos / contadorNegativos;
+	diferencia = acumuladorPositivos - acumuladorNegativos
+
+	document.write("Suma de negativos : " + " " + acumuladorNegativos );
+	document.write("\n Suma de positivos : " + " " + acumuladorPositivos );
+	document.write("\n Cantidad de positivos: " +" " + contadorPositivos);
+	document.write("\n Cantidad de negativos: " +" " + contadorNegativos);
+	document.write("\n Cantidad de positivos: " +" " + contadorPositivos);
+	document.write("\n Cantidad de pares: " +" " + contadorPares);
+	document.write("\n Cantidad de ceros: " +" " + contadorCeros);
+	document.write("\n promedioPositivos : " + " " + promedioPositivos);
+	document.write("\n promedioNegativos" + " " + promedioNegativos );
 
 }//FIN DE LA FUNCIÓN
