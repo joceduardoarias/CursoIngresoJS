@@ -1,18 +1,16 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	var importe;
+	var importe = prompt("Ingrese Importe");
+	var importeFinal;
 	var aumento;
-	var resultado;
-
-	importe = prompt("Ingrese imprte:","");
 
 	importe = parseInt(importe);
 
 	aumento = importe * 0.21;
-	resultado = importe + aumento;
+	importeFinal = importe + aumento;
 
-	alert("El imp0rte final es: " + resultado);
+	document.getElementById("importe").value = importeFinal;
 	
 }
 

@@ -1,21 +1,15 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	var largo;
-	var ancho;
-	var perimetro;
-	var cantidad;
+	var ancho = document.getElementById("ancho").value;
+	var largo = document.getElementById("largo").value;
+	var cantidadHilo;
 
-	largo = document.getElementById("ancho").value;
-	ancho = document.getElementById("largo").value;
-
-	largo = parseInt(largo);
 	ancho = parseInt(ancho);
+	largo = parseInt(largo);
 
-	perimetro = 2 * (largo + ancho);
-	cantidad = perimetro * 6;
+	cantidadHilo = (largo *ancho) * 6;
 
-	alert("la cantidad de hilo : " + cantidad);
-	
+	alert("cantidad  de Hilo: " + cantidadHilo + "metros");
 }
 

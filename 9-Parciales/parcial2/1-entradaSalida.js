@@ -1,15 +1,12 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	var base;
+	var base = document.getElementById("lado").value;
 	var perimetro;
-
-	base = document.getElementById("lado").value;
+	
 	base = parseInt(base);
-
-	perimetro = 3 * base;
-
-	alert("El perimetro es: " + perimetro);
+	perimetro = base * 3;
+	alert("El perimetro del triangulo es: " + perimetro);
 	
 }
 
