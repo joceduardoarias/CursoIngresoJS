@@ -30,51 +30,73 @@ function verificar()
 	// el contador se activa inmediatamente pedimos un nuevo numero al usuario
 	contadorIntentos++;
 	//ahora estructuramos las condiciones que se van a comparar
-	if (numero == numeroSecreto && contadorIntentos == 1) 
+	
+	switch(contadorIntentos)
 	{
-		alert("usted es un Psíquico");
-	}
-	else
-	{
-		if (numero == numeroSecreto && contadorIntentos == 2) 
-		{
-			alert("excelente percepción");
-		}
-		else
-		{
-			if (numero == numeroSecreto && contadorIntentos == 3) 
+		case 1:
+			
+			if(numero == numeroSecreto)
+			{
+				alert("usted es un Psíquico");
+			}
+		
+		break;
+		
+		case 2:
+			
+			if(numero == numeroSecreto)
+			{
+				alert("excelente percepción");
+			}
+		
+		break;
+		
+		case 3:
+			
+			if(numero == numeroSecreto)
 			{
 				alert("Esto es suerte");
 			}
-			else
+		
+		break;
+		
+		case 4:
+			
+			if(numero == numeroSecreto)
 			{
-				if (numero == numeroSecreto && contadorIntentos == 4) 
-				{
-					alert("Excelente técnica");
-				}
-				else
-				{
-					if (numero == numeroSecreto && contadorIntentos == 5) 
-					{
-						alert("usted está en la media");
-					}
-					else
-					{
-						if (numero == numeroSecreto && contadorIntentos > 5 && contadorIntentos < 11) 
-						{
-							alert("falta técnica");
-						}
-						else
-						{
-							if (numero == numeroSecreto && contadorIntentos > 10) 
-							{
-								alert("afortunado en el amor!!");
-							}
-						}	
-					}	
-				}	
+				alert("Excelente técnica");
+			}
+		
+		break;
+		
+		case 5:
+			
+			if(numero == numeroSecreto)
+			{
+				alert("usted está en la media");
 			}	
-		}	
-	}	
+		
+		break;	
+
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+
+			if (numero == numeroSecreto) 
+			{
+				alert("falta técnica");
+			}	
+		break;	
+
+		default: 
+
+			if (numero == numeroSecreto) 
+			{
+				alert("afortunado en el amor!!");
+			}
+
+	}
 	document.getElementById("intentos").value = contadorIntentos;
 }
