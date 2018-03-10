@@ -21,10 +21,10 @@ function CalcularPrecio ()
  	precio = cantidadLamparas * 35;
 
 
- 	if (cantidadLamparas >= 6) 
+ 	if (cantidadLamparas > 5) 
  	{
  		descuento = precio * 0.50;
- 	}// cantidad >= 6
+ 	}// cantidad > 5
  	else
  	{
  		if (cantidadLamparas == 5) 
