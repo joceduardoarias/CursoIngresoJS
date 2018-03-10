@@ -31,72 +31,43 @@ function verificar()
 	contadorIntentos++;
 	//ahora estructuramos las condiciones que se van a comparar
 	
-	switch(contadorIntentos)
+	if (numero == numeroSecreto) 
 	{
-		case 1:
-			
-			if(numero == numeroSecreto)
-			{
+		switch(contadorIntentos)
+		{
+			case 1:
 				alert("usted es un Psíquico");
-			}
-		
-		break;
-		
-		case 2:
+			break;
 			
-			if(numero == numeroSecreto)
-			{
-				alert("excelente percepción");
-			}
-		
-		break;
-		
-		case 3:
-			
-			if(numero == numeroSecreto)
-			{
+			case 2:
+				alert("excelente percepción");	
+			break;	
+
+			case 3:
 				alert("Esto es suerte");
-			}
-		
-		break;
-		
-		case 4:
+			break;
 			
-			if(numero == numeroSecreto)
-			{
+			case 4:
 				alert("Excelente técnica");
-			}
-		
-		break;
-		
-		case 5:
+			break;
 			
-			if(numero == numeroSecreto)
-			{
+			case 5:
 				alert("usted está en la media");
-			}	
-		
-		break;	
+			break;
+			
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+				alert("falta técnica");	
+			break;	
+		}
 
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-		case 10:
-
-			if (numero == numeroSecreto) 
-			{
-				alert("falta técnica");
-			}	
-		break;	
-
-		default: 
-
-			if (numero == numeroSecreto) 
-			{
-				alert("afortunado en el amor!!");
-			}
-
+		if (contadorIntentos >10) 
+		{
+			alert("afortunado en el amor!!");
+		}
 	}
 	document.getElementById("intentos").value = contadorIntentos;
 }
